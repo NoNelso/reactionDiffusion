@@ -8,11 +8,11 @@ function setup() {
     grid[x] = [];
     next[x] = [];
     for (var y = 0; y < height; y++) {
-      grid[y] = {
+      grid[x][y] = {
         a: 0,
         b: 0
       };
-      next[y] = {
+      next[x][y] = {
         a: 0,
         b: 0
       };
