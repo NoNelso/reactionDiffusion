@@ -15,15 +15,21 @@ function setup() {
     next[x] = [];
     for (var y = 0; y < height; y++) {
       grid[x][y] = {
-        a: 0,
-        b: 1,
-        c: 3
-      };
-      next[x][y] = {
-        a: 0,
+        a: 1,
         b: 0,
         c: 0
       };
+      next[x][y] = {
+        a: 1,
+        b: 0,
+        c: 0
+      };
+    }
+  }
+
+  for (var i = (width / 2) - 5; i < (width / 2) + 5; i++) {
+    for (var j = (height / 2) - 5; j < (height / 2) + 5; j++) {
+      grid[i][j].b = 1;
     }
   }
 }
