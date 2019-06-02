@@ -25,6 +25,13 @@ function setup() {
 
 function draw() {
   background(0);
+  for (var x = 0; x < width; x++) {
+    for (var y = 0; y < height; y++) {
+      next[x][y].a = grid[x][y].a
+      next[x][y].b = grid[x][y].b
+      next[x][y].c = grid[x][y].c
+    }
+  }
   loadPixels();
   for (var x = 0; x < width; x++) {
     for (var y = 0; y < height; y++) {
@@ -36,4 +43,10 @@ function draw() {
     }
   }
   updatePixels();
+}
+
+function swap() {
+  var holder = grid;
+  grid = next;
+  next = holder;
 }
