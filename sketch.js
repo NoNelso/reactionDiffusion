@@ -38,8 +38,8 @@ function draw() {
       next[x][y].a = a + da * lapla(x, y) - a * b * b + feed * (1 - a);
       next[x][y].b = a + db * laplb(x, y) - a * b * b - (k + feed) * b;
       next[x][y].c = c + random(-0.1, 0.1);
-      while (next[x][y].c < 0) next[x][y].c += .1;
-      while (next[x][y].c > 1) next[x][y].c -= .1;
+      if (next[x][y].c < 0) next[x][y].c += 0.1;
+      if (next[x][y].c > 1) next[x][y].c -= 0.9;
 
     }
   }
