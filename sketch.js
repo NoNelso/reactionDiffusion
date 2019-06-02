@@ -30,8 +30,8 @@ function setup() {
 
 function draw() {
   background(0);
-  for (var x = 0; x < width; x++) {
-    for (var y = 0; y < height; y++) {
+  for (var x = 1; x < width - 1; x++) {
+    for (var y = 1; y < height - 1; y++) {
       var a = grid[x][y].a;
       var b = grid[x][y].b;
       var c = grid[x][y].c;
@@ -65,9 +65,29 @@ function swap() {
 }
 
 function lapla(x, y) {
-  //do the thing
+  var sum = 0;
+  sum += grid[x - 1][y - 1].a * .20;
+  sum += grid[x + 0][y - 1].a * .05;
+  sum += grid[x + 1][y - 1].a * .20;
+  sum += grid[x - 1][y + 0].a * .05;
+  sum += grid[x + 0][y + 0].a * -1;
+  sum += grid[x + 1][y + 0].a * .05;
+  sum += grid[x - 1][y + 1].a * .20;
+  sum += grid[x + 0][y + 1].a * .05;
+  sum += grid[x + 1][y + 1].a * .20;
+  return sum;
+
 }
 
 function laplb(x, y) {
-  //do the other thing
+  sum += grid[x - 1][y - 1].b * .20;
+  sum += grid[x + 0][y - 1].b * .05;
+  sum += grid[x + 1][y - 1].b * .20;
+  sum += grid[x - 1][y + 0].b * .05;
+  sum += grid[x + 0][y + 0].b * -1;
+  sum += grid[x + 1][y + 0].b * .05;
+  sum += grid[x - 1][y + 1].b * .20;
+  sum += grid[x + 0][y + 1].b * .05;
+  sum += grid[x + 1][y + 1].b * .20;
+  return sum;
 }
