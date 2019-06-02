@@ -48,7 +48,7 @@ function draw() {
       pixels[pix + 1] = grid[x][y].b * 255;
       pixels[pix + 2] = grid[x][y].c * 255;
       pixels[pix + 3] = 255;
-      //but what does it mean
+      //ok cool
     }
   }
   updatePixels();
